@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V P G Ayurveda Hospital & Kalari Marma Chikithsalayam Karanthur | Traditional Kerala Ayurvedic Treatments</title>
+    <meta name="description" content="Experience authentic Ayurvedic healing at V P G Ayurveda Hospital in Karanthur. Specializing in Kalari Marma therapy, Panchakarma treatments, and traditional Kerala Ayurvedic medicine for holistic wellness.">
+    <meta name="keywords" content="V P G Ayurveda Hospital, Kalari Marma Chikithsalayam, Karanthur Ayurveda, Kerala Ayurvedic treatments, Panchakarma therapy, traditional medicine, holistic healing">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Work+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            /* V P G Ayurveda — palette drawn from the hospital's own material world:
+               kasavu cotton, kaavi mural pigment, aged brass urulis, patina bronze */
+            --kasavu: #F3ECD8;
+            --kasavu-deep: #E7DAB4;
+            --kaavi: #9A3324;
+            --kaavi-deep: #7A281C;
+            --patina: #2B4A3E;
+            --patina-deep: #16261F;
+            --brass: #8C6A24;
+            --brass-light: #C9A94E;
+            --line: #D8C89A;
+            --ink: #241C15;
+            --ink-soft: #574C39;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--kasavu);
+            color: var(--ink);
+        }
+
+        .font-display {
+            font-family: 'Fraunces', serif;
+            font-optical-sizing: auto;
+        }
+
+        .font-mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .eyebrow {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        h1, h2, h3, h4 {
+            text-wrap: balance;
+        }
+
+        /* Zari rule — a diamond-tick hairline echoing a kasavu mundu's woven gold border */
+        .zari-rule {
+            position: relative;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .zari-rule::before {
+            content: '';
+            position: absolute;
+            inset: -3px 0 auto 0;
+            height: 7px;
+            background-image:
+                repeating-linear-gradient(45deg, var(--brass-light) 0 2px, transparent 2px 16px),
+                repeating-linear-gradient(-45deg, var(--brass-light) 0 2px, transparent 2px 16px);
+            opacity: 0.55;
+        }
+
+        .zari-rule.on-dark {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .zari-rule.on-dark::before {
+            background-image:
+                repeating-linear-gradient(45deg, rgba(201, 169, 78, 0.7) 0 2px, transparent 2px 16px),
+                repeating-linear-gradient(-45deg, rgba(201, 169, 78, 0.7) 0 2px, transparent 2px 16px);
+        }
+
+        /* Seal — the site's monogram mark: a stamped apothecary seal, not a gradient blob */
+        .seal {
+            background: var(--kasavu);
+            border: 1.5px solid var(--brass-light);
+            border-radius: 6px;
+            color: var(--kaavi);
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* Docket — the treatment/stat card language: a specimen label, not a shadow card */
+        .docket {
+            background: #FBF7EA;
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .docket:hover {
+            border-color: var(--kaavi);
+            transform: translateY(-4px);
+            box-shadow: 0 22px 40px -26px rgba(36, 28, 21, 0.4);
+        }
+
+        .docket .kicker {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        .icon-tile {
+            background: var(--kasavu-deep);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            color: var(--patina);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--patina) 0%, var(--patina-deep) 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(120deg, var(--brass) 0%, var(--brass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--kaavi);
+            color: var(--kasavu);
+            border: 1px solid var(--kaavi);
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--kaavi-deep);
+            border-color: var(--kaavi-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 24px -10px rgba(122, 40, 28, 0.5);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #fff;
+        }
+
+        .card-hover {
+            transition: all 0.35s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px -20px rgba(20, 30, 25, 0.18);
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .marma-tooltip {
+            pointer-events: none;
+        }
+
+        .quiz-card {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .option-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .recommendation-card {
+            transition: all 0.3s ease;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Site header: transparent glass over the hero, solid on scroll */
+        header {
+            background: transparent;
+            border-bottom: 1px solid transparent;
+        }
+
+        header .seal {
+            box-shadow: 0 2px 10px rgba(22, 30, 22, 0.3);
+        }
+
+        header .logo-title,
+        header .logo-sub {
+            color: #fff;
+        }
+
+        header .logo-sub {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        header .nav-link {
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 500;
+            transition: color 0.25s ease;
+        }
+
+        header .nav-link:hover {
+            color: var(--brass-light);
+        }
+
+        header .nav-link.active {
+            color: var(--brass-light);
+        }
+
+        header .btn-nav-book {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            color: #fff;
+        }
+
+        header .btn-nav-book:hover {
+            background: #fff;
+            color: var(--kaavi-deep);
+            border-color: #fff;
+        }
+
+        header .menu-icon {
+            color: #fff;
+        }
+
+        header.is-scrolled {
+            background: rgba(250, 246, 238, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom-color: var(--line);
+            box-shadow: 0 12px 30px -20px rgba(20, 30, 20, 0.35);
+        }
+
+        header.is-scrolled .logo-title {
+            color: var(--ink);
+        }
+
+        header.is-scrolled .logo-sub {
+            color: var(--ink-soft);
+        }
+
+        header.is-scrolled .nav-link {
+            color: var(--ink-soft);
+        }
+
+        header.is-scrolled .nav-link:hover,
+        header.is-scrolled .nav-link.active {
+            color: var(--patina);
+        }
+
+        header.is-scrolled .btn-nav-book {
+            background: var(--kaavi);
+            border-color: var(--kaavi);
+            color: var(--kasavu);
+        }
+
+        header.is-scrolled .btn-nav-book:hover {
+            background: var(--kaavi-deep);
+            border-color: var(--kaavi-deep);
+        }
+
+        header.is-scrolled .menu-icon {
+            color: var(--ink);
+        }
+
+        #mobile-menu {
+            background: rgba(250, 246, 238, 0.98);
+            backdrop-filter: blur(14px);
+            border-radius: 0 0 1rem 1rem;
+            border-top: 1px solid var(--line);
+        }
+
+        #mobile-menu .nav-link,
+        #mobile-menu .logo-title {
+            color: var(--ink) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="seal w-11 h-11 md:w-12 md:h-12 flex items-center justify-center flex-shrink-0">
+                        <span class="font-mono font-bold text-sm md:text-base">VPG</span>
+                    </div>
+                    <div>
+                        <h1 class="logo-title font-display text-lg md:text-xl font-bold leading-tight">V P G Ayurveda</h1>
+                        <p class="logo-sub font-mono text-[0.65rem] md:text-xs tracking-wide uppercase">Karanthur · Kozhikode</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="treatments.html" class="nav-link">Treatments</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="btn-nav-book px-6 py-2.5 rounded font-medium transition-all duration-300">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden menu-icon" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden hidden mt-3 pb-4 px-2" id="mobile-menu">
+                <div class="flex flex-col space-y-1 pt-4">
+                    <a href="index.html" class="nav-link active py-2 px-2">Home</a>
+                    <a href="treatments.html" class="nav-link py-2 px-2">Treatments</a>
+                    <a href="about.html" class="nav-link py-2 px-2">About</a>
+                    <a href="contact.html" class="nav-link py-2 px-2">Contact</a>
+                    <a href="contact.html" class="btn-primary px-6 py-3 rounded font-medium mt-2 w-full">Book Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(160deg, var(--patina) 0%, var(--patina-deep) 100%);">
+        <div class="container mx-auto px-6 relative z-10 pt-28 pb-16 sm:pt-32 sm:pb-20">
+            <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+                <!-- Text column -->
+                <div>
+                    <p class="eyebrow mb-5" style="color: var(--brass-light);">Karanthur · Kozhikode · Est. 1998</p>
+                    <h1 class="hero-title font-display text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.08]" style="color: var(--kasavu);">
+                        Ancient wisdom,
+                        <span class="italic font-normal" style="color: var(--brass-light);">carried forward</span>
+                    </h1>
+
+                    <p class="hero-subtitle text-base sm:text-lg mb-8 max-w-lg leading-relaxed" style="color: rgba(243, 236, 216, 0.82);">
+                        V P G Ayurveda Hospital & Kalari Marma Chikithsalayam treats the whole person with the same Kerala remedies our doctors' teachers once measured by hand — Panchakarma, marma therapy, and herb-oil medicine, prepared on site in Karanthur.
+                    </p>
+
+                    <div class="hero-cta flex flex-col sm:flex-row gap-4 mb-10">
+                        <a href="#treatment-quiz" class="btn-primary px-7 py-3.5 font-semibold text-base w-full sm:w-auto">
+                            Find Your Treatment
+                        </a>
+                        <a href="contact.html" class="btn-outline px-7 py-3.5 font-semibold text-base w-full sm:w-auto">
+                            Book Consultation
+                        </a>
+                    </div>
+
+                    <div class="zari-rule on-dark max-w-xs mb-6"></div>
+
+                    <p class="font-mono text-xs tracking-wide uppercase" style="color: rgba(243, 236, 216, 0.6);">
+                        25+ Years Practicing · 10,000+ Patients Treated
+                    </p>
+                </div>
+
+                <!-- Photo column -->
+                <div class="relative hidden sm:block">
+                    <div class="absolute -bottom-5 -right-5 w-full h-full" style="background: var(--kaavi); border-radius: 3px;"></div>
+                    <div class="relative" style="border: 1px solid rgba(243, 236, 216, 0.3); border-radius: 3px; padding: 10px; background: var(--patina-deep);">
+                        <img src="hero-hospital.png" alt="V P G Ayurveda Hospital treatment room, Karanthur" class="w-full h-80 lg:h-96 object-cover" style="border-radius: 2px;">
+                    </div>
+                    <p class="font-mono text-[0.65rem] tracking-wider uppercase mt-4 relative" style="color: rgba(243, 236, 216, 0.55);">
+                        Fig. 01 — Treatment Wing, Karanthur
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 sm:py-24 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="fade-up order-2 lg:order-1">
+                    <p class="eyebrow mb-4" style="color: var(--kaavi);">Our Story</p>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                        Authentic <span style="color: var(--patina);">Kerala Ayurveda</span>
+                    </h2>
+                    <p class="text-base sm:text-lg mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        V P G Ayurveda Hospital & Kalari Marma Chikithsalayam has been serving the community of Karanthur, Kozhikode
+                        with authentic traditional Ayurvedic treatments for over two decades. Our hospital combines ancient wisdom
+                        with modern comfort to provide holistic healing experiences.
+                    </p>
+                    <p class="text-base sm:text-lg mb-8 leading-relaxed" style="color: var(--ink-soft);">
+                        Specializing in Kalari Marma therapy, Panchakarma treatments, and traditional Kerala Ayurvedic medicine,
+                        we offer personalized treatment plans that address the root cause of ailments while promoting overall wellness.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-10">
+                        <div class="p-5 rounded-xl border" style="border-color: var(--line); background: var(--kasavu);">
+                            <div class="font-display text-2xl sm:text-3xl font-bold mb-1" style="color: var(--patina);">25+</div>
+                            <div class="text-sm sm:text-base" style="color: var(--ink-soft);">Years Experience</div>
+                        </div>
+                        <div class="p-5 rounded-xl border" style="border-color: var(--line); background: var(--kasavu);">
+                            <div class="font-display text-2xl sm:text-3xl font-bold mb-1" style="color: var(--patina);">10,000+</div>
+                            <div class="text-sm sm:text-base" style="color: var(--ink-soft);">Patients Treated</div>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn-primary inline-flex items-center px-6 py-3 font-medium">
+                        Learn More About Us
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="slide-left order-1 lg:order-2">
+                    <div class="relative">
+                        <img src="treatment-room.png" alt="Ayurvedic Treatment Room" class="w-full h-72 sm:h-96 object-cover" style="border-radius: 3px; border: 1px solid var(--line);">
+                        <div class="seal absolute -bottom-5 -right-5 sm:-bottom-6 sm:-right-6 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center font-mono font-bold text-sm sm:text-base">
+                            VPG
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Treatments -->
+    <section class="py-16 sm:py-24 md:py-28" style="background: var(--kasavu-deep);">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14 sm:mb-16 fade-up">
+                <p class="eyebrow mb-4">What We Offer</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Our <span style="color: var(--patina);">Specialized Treatments</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Discover the healing power of traditional Kerala Ayurvedic therapies,
+                    each designed to restore balance and promote natural wellness.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+                <!-- Kalari Marma Therapy -->
+                <div class="scale-in docket p-8">
+                    <p class="kicker mb-5">Specialty Therapy</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Kalari Marma Therapy</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Ancient healing technique targeting 108 vital energy points (Marma points) to restore balance,
+                        relieve chronic pain, and enhance overall vitality through precise pressure application.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Chronic pain relief
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Energy balance restoration
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Improved mobility
+                        </div>
+                    </div>
+                    <a href="treatments.html#kalari-marma" class="inline-flex items-center font-medium" style="color: var(--patina);">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Panchakarma Treatment -->
+                <div class="scale-in docket p-8" style="animation-delay: 0.2s;">
+                    <p class="kicker mb-5">Specialty Therapy</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Panchakarma Detox</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Comprehensive 5-action detoxification therapy that cleanses toxins from the body,
+                        balances doshas, and rejuvenates the entire system through specialized treatments.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Deep body detoxification
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Dosha balance restoration
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Enhanced immunity
+                        </div>
+                    </div>
+                    <a href="treatments.html#panchakarma" class="inline-flex items-center font-medium" style="color: var(--patina);">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Traditional Kerala Treatments -->
+                <div class="scale-in docket p-8 sm:col-span-2 lg:col-span-1" style="animation-delay: 0.4s;">
+                    <p class="kicker mb-5">Specialty Therapy</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Traditional Therapies</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Authentic Kerala Ayurvedic treatments including Abhyanga, Shirodhara, Njavarakizhi,
+                        and specialized therapies for specific conditions and overall wellness.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Stress & anxiety relief
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Skin & hair health
+                        </div>
+                        <div class="flex items-center text-sm" style="color: var(--ink-soft);">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" style="color: var(--patina);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Rejuvenation therapy
+                        </div>
+                    </div>
+                    <a href="treatments.html#traditional" class="inline-flex items-center font-medium" style="color: var(--patina);">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Quiz Section -->
+    <section id="treatment-quiz" class="py-16 sm:py-24 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14 sm:mb-16 fade-up">
+                <p class="eyebrow mb-4">Personalized Care</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Find Your <span style="color: var(--patina);">Perfect Treatment</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Answer a few questions to get personalized treatment recommendations
+                    based on your health goals and current condition.
+                </p>
+            </div>
+
+            <div id="quiz-container" class="fade-up">
+                <!-- Quiz will be dynamically loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-16 sm:py-24 md:py-28" style="background: var(--kasavu-deep);">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14 sm:mb-16 fade-up">
+                <p class="eyebrow mb-4">Testimonials</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Success <span style="color: var(--patina);">Stories</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Real experiences from patients who found healing and wellness through our traditional Ayurvedic treatments.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="scale-in docket p-8">
+                    <div class="flex items-center mb-6">
+                        <img src="doctor-consultation.png" alt="Patient" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold" style="color: var(--ink);">Rajesh Kumar</h4>
+                            <p class="text-sm" style="color: var(--ink-soft);">Chronic Back Pain</p>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic" style="color: var(--ink-soft);">
+                        "After 15 years of chronic back pain, Kalari Marma therapy at VPG gave me my life back. 
+                        The personalized treatment and caring staff made all the difference."
+                    </p>
+                    <div class="flex" style="color: var(--brass);">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="scale-in docket p-8" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <img src="ayurvedic-herbs.png" alt="Patient" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold" style="color: var(--ink);">Priya Menon</h4>
+                            <p class="text-sm" style="color: var(--ink-soft);">Stress & Anxiety</p>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic" style="color: var(--ink-soft);">
+                        "The Panchakarma treatment was transformative. Not only did my stress levels decrease significantly, 
+                        but my overall energy and sleep quality improved dramatically."
+                    </p>
+                    <div class="flex" style="color: var(--brass);">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="scale-in docket p-8 sm:col-span-2 lg:col-span-1" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <img src="marma-points.png" alt="Patient" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold" style="color: var(--ink);">Suresh Nair</h4>
+                            <p class="text-sm" style="color: var(--ink-soft);">Sports Injury</p>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic" style="color: var(--ink-soft);">
+                        "As a former athlete, I thought my knee injury would never heal completely. The combination of 
+                        Kalari Marma and traditional treatments got me back to my active lifestyle."
+                    </p>
+                    <div class="flex" style="color: var(--brass);">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Booking CTA -->
+    <section class="py-16 sm:py-24 hero-gradient">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto fade-up">
+                <p class="eyebrow mb-4" style="color: var(--brass-light);">Begin Today</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                    Ready to Begin Your Healing Journey?
+                </h2>
+                <p class="text-lg sm:text-xl text-white/85 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Book your consultation today and take the first step towards natural healing and wellness
+                    with our expert Ayurvedic practitioners.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="contact.html" class="btn-primary px-8 py-4 font-semibold text-base sm:text-lg w-full sm:w-auto">
+                        Book Consultation
+                    </a>
+                    <a href="tel:+919447012345" class="btn-outline px-8 py-4 font-semibold text-base sm:text-lg w-full sm:w-auto">
+                        Call Now: +91 94470 12345
+                    </a>
+                </div>
+
+                <div class="zari-rule on-dark max-w-xs mx-auto mt-12 mb-8"></div>
+
+                <div class="flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-2 justify-center font-mono text-xs sm:text-sm tracking-wide uppercase" style="color: rgba(243, 236, 216, 0.65);">
+                    <p>Location — Karanthur, Kozhikode</p>
+                    <p>Hours — Mon–Sat, 8am–7pm</p>
+                    <p>Email — info@vpgayurveda.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-14 sm:py-16" style="background: var(--patina-deep);">
+        <div class="container mx-auto px-6">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+                <div class="sm:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="seal w-12 h-12 flex items-center justify-center">
+                            <span class="font-mono font-bold text-base">VPG</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-xl font-bold">V P G Ayurveda Hospital</h3>
+                            <p class="text-white/60">Karanthur, Kozhikode</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 mb-6 leading-relaxed max-w-md">
+                        Traditional Kerala Ayurvedic hospital specializing in Kalari Marma therapy,
+                        Panchakarma treatments, and holistic healing for over 25 years.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#9A3324] transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#9A3324] transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#9A3324] transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/60 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="treatments.html" class="text-white/60 hover:text-white transition-colors">Treatments</a></li>
+                        <li><a href="about.html" class="text-white/60 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-white/60">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Karanthur, Kozhikode, Kerala 673571</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+91 94470 12345</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@vpgayurveda.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-10 pt-8 text-center text-white/50 text-sm">
+                <p>&copy; 2024 V P G Ayurveda Hospital & Kalari Marma Chikithsalayam. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+    
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

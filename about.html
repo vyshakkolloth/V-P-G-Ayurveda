@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About V P G Ayurveda Hospital | Expert Doctors & Traditional Healing in Karanthur</title>
+    <meta name="description" content="Learn about V P G Ayurveda Hospital's 25+ years of healing tradition in Karanthur. Meet our expert doctors, explore our facilities, and discover our commitment to authentic Ayurvedic medicine.">
+    <meta name="keywords" content="V P G Ayurveda Hospital history, expert Ayurvedic doctors, traditional healing, Karanthur Ayurveda, Kerala hospital, experienced practitioners">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Work+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            /* V P G Ayurveda — palette drawn from the hospital's own material world:
+               kasavu cotton, kaavi mural pigment, aged brass urulis, patina bronze */
+            --kasavu: #F3ECD8;
+            --kasavu-deep: #E7DAB4;
+            --kaavi: #9A3324;
+            --kaavi-deep: #7A281C;
+            --patina: #2B4A3E;
+            --patina-deep: #16261F;
+            --brass: #8C6A24;
+            --brass-light: #C9A94E;
+            --line: #D8C89A;
+            --ink: #241C15;
+            --ink-soft: #574C39;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--kasavu);
+            color: var(--ink);
+        }
+
+        .font-display {
+            font-family: 'Fraunces', serif;
+            font-optical-sizing: auto;
+        }
+
+        .font-mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .eyebrow {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        h1, h2, h3, h4 {
+            text-wrap: balance;
+        }
+
+        /* Zari rule — a diamond-tick hairline echoing a kasavu mundu's woven gold border */
+        .zari-rule {
+            position: relative;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .zari-rule::before {
+            content: '';
+            position: absolute;
+            inset: -3px 0 auto 0;
+            height: 7px;
+            background-image:
+                repeating-linear-gradient(45deg, var(--brass-light) 0 2px, transparent 2px 16px),
+                repeating-linear-gradient(-45deg, var(--brass-light) 0 2px, transparent 2px 16px);
+            opacity: 0.55;
+        }
+
+        .zari-rule.on-dark {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .zari-rule.on-dark::before {
+            background-image:
+                repeating-linear-gradient(45deg, rgba(201, 169, 78, 0.7) 0 2px, transparent 2px 16px),
+                repeating-linear-gradient(-45deg, rgba(201, 169, 78, 0.7) 0 2px, transparent 2px 16px);
+        }
+
+        /* Seal — the site's monogram mark: a stamped apothecary seal, not a gradient blob */
+        .seal {
+            background: var(--kasavu);
+            border: 1.5px solid var(--brass-light);
+            border-radius: 6px;
+            color: var(--kaavi);
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* Docket — the card language site-wide: a specimen label, not a shadow card */
+        .docket {
+            background: #FBF7EA;
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .docket:hover {
+            border-color: var(--kaavi);
+            transform: translateY(-4px);
+            box-shadow: 0 22px 40px -26px rgba(36, 28, 21, 0.4);
+        }
+
+        .docket .kicker {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--brass);
+        }
+
+        .icon-tile {
+            background: var(--kasavu-deep);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            color: var(--patina);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--patina) 0%, var(--patina-deep) 100%);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--kaavi);
+            color: var(--kasavu);
+            border: 1px solid var(--kaavi);
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--kaavi-deep);
+            border-color: var(--kaavi-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 24px -10px rgba(122, 40, 28, 0.5);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #fff;
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Site header: transparent glass over the dark hero, solid on scroll */
+        header {
+            background: transparent;
+            border-bottom: 1px solid transparent;
+        }
+
+        header .seal {
+            box-shadow: 0 2px 10px rgba(22, 30, 22, 0.3);
+        }
+
+        header .logo-title,
+        header .logo-sub {
+            color: #fff;
+        }
+
+        header .logo-sub {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        header .nav-link {
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 500;
+            transition: color 0.25s ease;
+        }
+
+        header .nav-link:hover {
+            color: var(--brass-light);
+        }
+
+        header .nav-link.active {
+            color: var(--brass-light);
+        }
+
+        header .btn-nav-book {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            color: #fff;
+        }
+
+        header .btn-nav-book:hover {
+            background: #fff;
+            color: var(--kaavi-deep);
+            border-color: #fff;
+        }
+
+        header .menu-icon {
+            color: #fff;
+        }
+
+        header.is-scrolled {
+            background: rgba(243, 236, 216, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom-color: var(--line);
+            box-shadow: 0 12px 30px -20px rgba(20, 30, 20, 0.35);
+        }
+
+        header.is-scrolled .logo-title {
+            color: var(--ink);
+        }
+
+        header.is-scrolled .logo-sub {
+            color: var(--ink-soft);
+        }
+
+        header.is-scrolled .nav-link {
+            color: var(--ink-soft);
+        }
+
+        header.is-scrolled .nav-link:hover,
+        header.is-scrolled .nav-link.active {
+            color: var(--patina);
+        }
+
+        header.is-scrolled .btn-nav-book {
+            background: var(--kaavi);
+            border-color: var(--kaavi);
+            color: var(--kasavu);
+        }
+
+        header.is-scrolled .btn-nav-book:hover {
+            background: var(--kaavi-deep);
+            border-color: var(--kaavi-deep);
+        }
+
+        header.is-scrolled .menu-icon {
+            color: var(--ink);
+        }
+
+        #mobile-menu {
+            background: rgba(243, 236, 216, 0.98);
+            backdrop-filter: blur(14px);
+            border-radius: 0 0 6px 6px;
+            border-top: 1px solid var(--line);
+        }
+
+        #mobile-menu .nav-link,
+        #mobile-menu .logo-title {
+            color: var(--ink) !important;
+        }
+
+        /* About page specific */
+        .about-hero {
+            background: linear-gradient(160deg, var(--patina) 0%, var(--patina-deep) 100%);
+            min-height: 42vh;
+        }
+
+        @media (max-width: 640px) {
+            .about-hero {
+                min-height: 38vh;
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--brass-light);
+            border-radius: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.375rem;
+            top: 1.5rem;
+            width: 0.25rem;
+            height: calc(100% - 1rem);
+            background: var(--brass-light);
+            opacity: 0.3;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* Small square tick — replaces rounded-full bullet dots in feature lists */
+        .tick-dot {
+            display: inline-block;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 1px;
+            background: var(--brass-light);
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="seal w-11 h-11 md:w-12 md:h-12 flex items-center justify-center flex-shrink-0">
+                        <span class="font-mono font-bold text-sm md:text-base">VPG</span>
+                    </div>
+                    <div>
+                        <h1 class="logo-title font-display text-lg md:text-xl font-bold leading-tight">V P G Ayurveda</h1>
+                        <p class="logo-sub font-mono text-[0.65rem] md:text-xs tracking-wide uppercase">Karanthur · Kozhikode</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="treatments.html" class="nav-link">Treatments</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="btn-nav-book px-6 py-2.5 rounded font-medium transition-all duration-300">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden menu-icon" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden hidden mt-3 pb-4 px-2" id="mobile-menu">
+                <div class="flex flex-col space-y-1 pt-4">
+                    <a href="index.html" class="nav-link py-2 px-2">Home</a>
+                    <a href="treatments.html" class="nav-link py-2 px-2">Treatments</a>
+                    <a href="about.html" class="nav-link active py-2 px-2">About</a>
+                    <a href="contact.html" class="nav-link py-2 px-2">Contact</a>
+                    <a href="contact.html" class="btn-primary px-6 py-3 rounded font-medium mt-2 w-full">Book Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 pt-28 pb-14 sm:pt-32 sm:pb-16">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="eyebrow mb-5" style="color: var(--brass-light);">Since 1998</p>
+                <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.1]" style="color: var(--kasavu);">
+                    About V P G <span class="italic font-normal" style="color: var(--brass-light);">Ayurveda</span>
+                </h1>
+
+                <p class="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed" style="color: rgba(243, 236, 216, 0.82);">
+                    Discover our legacy of healing, our expert practitioners, and our commitment
+                    to authentic Ayurvedic medicine in Karanthur, Kozhikode.
+                </p>
+
+                <div class="zari-rule on-dark max-w-xs mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital History & Legacy -->
+    <section class="py-16 sm:py-24 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="fade-up">
+                    <p class="eyebrow mb-4" style="color: var(--kaavi);">Our Legacy</p>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                        Our <span style="color: var(--patina);">Healing Legacy</span>
+                    </h2>
+                    <p class="text-base sm:text-lg mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        V P G Ayurveda Hospital & Kalari Marma Chikithsalayam was established in 1998 by Dr. V. P. Gopalakrishnan,
+                        a renowned Ayurvedic practitioner with a vision to bring authentic traditional healing to the community
+                        of Karanthur, Kozhikode. What started as a small clinic has grown into a comprehensive healthcare
+                        center specializing in traditional Kerala Ayurvedic treatments.
+                    </p>
+
+                    <p class="text-base sm:text-lg mb-8 leading-relaxed" style="color: var(--ink-soft);">
+                        Over the past 25+ years, we have remained committed to the ancient principles of Ayurveda while
+                        integrating modern comfort and safety standards. Our hospital has become a trusted name in
+                        authentic Ayurvedic healing, attracting patients from across Kerala and beyond.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-8">
+                        <div class="text-center p-6" style="background: var(--kasavu-deep); border: 1px solid var(--line); border-radius: 3px;">
+                            <div class="font-display text-3xl sm:text-4xl font-bold mb-1" style="color: var(--patina);">25+</div>
+                            <div class="text-sm sm:text-base" style="color: var(--ink-soft);">Years of Service</div>
+                        </div>
+                        <div class="text-center p-6" style="background: var(--kasavu-deep); border: 1px solid var(--line); border-radius: 3px;">
+                            <div class="font-display text-3xl sm:text-4xl font-bold mb-1" style="color: var(--kaavi);">10,000+</div>
+                            <div class="text-sm sm:text-base" style="color: var(--ink-soft);">Patients Treated</div>
+                        </div>
+                        <div class="text-center p-6" style="background: var(--kasavu-deep); border: 1px solid var(--line); border-radius: 3px;">
+                            <div class="font-display text-3xl sm:text-4xl font-bold mb-1" style="color: var(--patina);">15+</div>
+                            <div class="text-sm sm:text-base" style="color: var(--ink-soft);">Treatment Types</div>
+                        </div>
+                        <div class="text-center p-6" style="background: var(--kasavu-deep); border: 1px solid var(--line); border-radius: 3px;">
+                            <div class="font-display text-3xl sm:text-4xl font-bold mb-1" style="color: var(--kaavi);">98%</div>
+                            <div class="text-sm sm:text-base" style="color: var(--ink-soft);">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-left">
+                    <div class="relative">
+                        <img src="treatment-room.png" alt="Hospital Interior" class="w-full h-64 sm:h-80 md:h-96 object-cover" style="border-radius: 3px; border: 1px solid var(--line); box-shadow: 0 24px 48px -20px rgba(20, 30, 25, 0.25);">
+                        <div class="absolute -bottom-6 -right-6 w-24 h-24 flex items-center justify-center text-center font-mono font-bold text-sm floating-animation" style="background: var(--patina-deep); border: 1.5px solid var(--brass-light); border-radius: 6px; color: var(--kasavu); line-height: 1.3;">
+                            Est.<br>1998
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 sm:py-24 md:py-28" style="background: var(--kasavu-deep);">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <p class="eyebrow mb-4">Milestones</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Our <span style="color: var(--patina);">Journey</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Follow our evolution from a small traditional clinic to a comprehensive
+                    Ayurvedic healthcare center serving the community for over two decades.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-12">
+                    <div class="timeline-item fade-up">
+                        <div class="docket p-8 ml-8">
+                            <div class="flex items-center mb-4">
+                                <span class="font-mono text-xl sm:text-2xl font-bold mr-4" style="color: var(--brass);">1998</span>
+                                <h3 class="font-display text-2xl font-bold" style="color: var(--ink);">Foundation</h3>
+                            </div>
+                            <p class="leading-relaxed" style="color: var(--ink-soft);">
+                                Dr. V. P. Gopalakrishnan established the hospital with a focus on traditional
+                                Kalari Marma therapy and basic Ayurvedic treatments, starting with just two treatment rooms.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-up" style="animation-delay: 0.2s;">
+                        <div class="docket p-8 ml-8">
+                            <div class="flex items-center mb-4">
+                                <span class="font-mono text-xl sm:text-2xl font-bold mr-4" style="color: var(--brass);">2003</span>
+                                <h3 class="font-display text-2xl font-bold" style="color: var(--ink);">Expansion</h3>
+                            </div>
+                            <p class="leading-relaxed" style="color: var(--ink-soft);">
+                                Added Panchakarma treatment facilities and expanded to include specialized therapy rooms,
+                                herbal medicine preparation unit, and patient accommodation facilities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-up" style="animation-delay: 0.4s;">
+                        <div class="docket p-8 ml-8">
+                            <div class="flex items-center mb-4">
+                                <span class="font-mono text-xl sm:text-2xl font-bold mr-4" style="color: var(--brass);">2010</span>
+                                <h3 class="font-display text-2xl font-bold" style="color: var(--ink);">Innovation</h3>
+                            </div>
+                            <p class="leading-relaxed" style="color: var(--ink-soft);">
+                                Introduced modern diagnostic equipment while maintaining traditional treatment methods.
+                                Added yoga and meditation facilities for holistic healing approaches.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-up" style="animation-delay: 0.6s;">
+                        <div class="docket p-8 ml-8">
+                            <div class="flex items-center mb-4">
+                                <span class="font-mono text-xl sm:text-2xl font-bold mr-4" style="color: var(--brass);">2018</span>
+                                <h3 class="font-display text-2xl font-bold" style="color: var(--ink);">Recognition</h3>
+                            </div>
+                            <p class="leading-relaxed" style="color: var(--ink-soft);">
+                                Received state-level recognition for excellence in traditional medicine and
+                                became a preferred training center for Ayurvedic students and practitioners.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-up" style="animation-delay: 0.8s;">
+                        <div class="docket p-8 ml-8">
+                            <div class="flex items-center mb-4">
+                                <span class="font-mono text-xl sm:text-2xl font-bold mr-4" style="color: var(--brass);">2024</span>
+                                <h3 class="font-display text-2xl font-bold" style="color: var(--ink);">Present Day</h3>
+                            </div>
+                            <p class="leading-relaxed" style="color: var(--ink-soft);">
+                                A comprehensive healthcare facility offering 15+ specialized treatments,
+                                with a team of expert practitioners and modern facilities while staying true to traditional healing principles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Doctors Section -->
+    <section class="py-16 sm:py-24 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <p class="eyebrow mb-4">Meet The Team</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Meet Our <span style="color: var(--patina);">Expert Doctors</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Our team of experienced Ayurvedic practitioners combines traditional wisdom
+                    with modern expertise to provide the best possible care for our patients.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Dr. V. P. Gopalakrishnan -->
+                <div class="scale-in docket p-8 text-center">
+                    <p class="kicker mb-4">Kalari Marma</p>
+                    <div class="w-32 h-32 mx-auto mb-6">
+                        <img src="doctor-consultation.png" alt="Dr. V. P. Gopalakrishnan" class="w-32 h-32 rounded-full object-cover" style="border: 3px solid var(--brass-light);">
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-2" style="color: var(--ink);">Dr. V. P. Gopalakrishnan</h3>
+                    <p class="font-semibold mb-4" style="color: var(--patina);">Founder & Chief Physician</p>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        With over 25 years of experience in traditional Ayurvedic medicine, Dr. Gopalakrishnan
+                        is a renowned expert in Kalari Marma therapy and Panchakarma treatments. He completed
+                        his BAMS from Government Ayurveda College, Thiruvananthapuram.
+                    </p>
+
+                    <div class="space-y-2 mb-6 text-sm">
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Kalari Marma Specialist</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Panchakarma Expert</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Traditional Medicine Researcher</span>
+                        </div>
+                    </div>
+
+                    <div class="font-mono text-sm font-bold uppercase tracking-wide" style="color: var(--kaavi);">25+ Years Experience</div>
+                </div>
+
+                <!-- Dr. Priya Nair -->
+                <div class="scale-in docket p-8 text-center" style="animation-delay: 0.2s;">
+                    <p class="kicker mb-4">Panchakarma</p>
+                    <div class="w-32 h-32 mx-auto mb-6">
+                        <img src="ayurvedic-herbs.png" alt="Dr. Priya Nair" class="w-32 h-32 rounded-full object-cover" style="border: 3px solid var(--brass-light);">
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-2" style="color: var(--ink);">Dr. Priya Nair</h3>
+                    <p class="font-semibold mb-4" style="color: var(--patina);">Panchakarma Specialist</p>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Dr. Priya specializes in Panchakarma treatments and women's health issues. She has extensive
+                        experience in treating hormonal imbalances, digestive disorders, and stress-related conditions
+                        through traditional Ayurvedic approaches.
+                    </p>
+
+                    <div class="space-y-2 mb-6 text-sm">
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Women's Health Specialist</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Panchakarma Expert</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Stress Management</span>
+                        </div>
+                    </div>
+
+                    <div class="font-mono text-sm font-bold uppercase tracking-wide" style="color: var(--kaavi);">15+ Years Experience</div>
+                </div>
+
+                <!-- Dr. Arun Kumar -->
+                <div class="scale-in docket p-8 text-center sm:col-span-2 lg:col-span-1" style="animation-delay: 0.4s;">
+                    <p class="kicker mb-4">Sports Medicine</p>
+                    <div class="w-32 h-32 mx-auto mb-6">
+                        <img src="marma-points.png" alt="Dr. Arun Kumar" class="w-32 h-32 rounded-full object-cover" style="border: 3px solid var(--brass-light);">
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-2" style="color: var(--ink);">Dr. Arun Kumar</h3>
+                    <p class="font-semibold mb-4" style="color: var(--patina);">Sports Medicine & Injury Specialist</p>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Dr. Arun focuses on sports injuries, musculoskeletal disorders, and rehabilitation through
+                        Ayurvedic treatments. He combines traditional healing methods with modern sports medicine
+                        knowledge for optimal recovery.
+                    </p>
+
+                    <div class="space-y-2 mb-6 text-sm">
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Sports Injury Expert</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Rehabilitation Specialist</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span style="color: var(--ink-soft);">Physical Therapy</span>
+                        </div>
+                    </div>
+
+                    <div class="font-mono text-sm font-bold uppercase tracking-wide" style="color: var(--kaavi);">12+ Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities & Infrastructure -->
+    <section class="py-16 sm:py-24 md:py-28" style="background: var(--kasavu-deep);">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <p class="eyebrow mb-4">Our Facilities</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Our <span style="color: var(--patina);">Facilities</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Modern infrastructure designed to provide comfortable and effective healing experiences
+                    while maintaining the authenticity of traditional Ayurvedic treatments.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Treatment Rooms -->
+                <div class="scale-in docket p-8">
+                    <p class="kicker mb-5">Facility</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Treatment Rooms</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Spacious, well-ventilated treatment rooms designed according to Vastu principles,
+                        equipped with traditional massage tables and modern hygiene facilities.
+                    </p>
+                    <div class="space-y-2 text-sm" style="color: var(--ink-soft);">
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>8 Private treatment rooms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Traditional wooden massage tables</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Temperature-controlled environment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panchakarma Unit -->
+                <div class="scale-in docket p-8" style="animation-delay: 0.1s;">
+                    <p class="kicker mb-5">Facility</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Panchakarma Unit</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Dedicated Panchakarma facility with specialized equipment for all five detoxification
+                        procedures, ensuring safe and effective treatment execution.
+                    </p>
+                    <div class="space-y-2 text-sm" style="color: var(--ink-soft);">
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>3 Panchakarma therapy rooms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Steam chamber facilities</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Specialized equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herbal Medicine Unit -->
+                <div class="scale-in docket p-8 sm:col-span-2 lg:col-span-1" style="animation-delay: 0.2s;">
+                    <p class="kicker mb-5">Facility</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Herbal Medicine Unit</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        In-house preparation of authentic Ayurvedic medicines using traditional methods
+                        and high-quality herbs sourced from reliable suppliers.
+                    </p>
+                    <div class="space-y-2 text-sm" style="color: var(--ink-soft);">
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Traditional preparation methods</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Quality-controlled processes</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Fresh herbal formulations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yoga & Meditation Hall -->
+                <div class="scale-in docket p-8" style="animation-delay: 0.3s;">
+                    <p class="kicker mb-5">Facility</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Yoga & Meditation Hall</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Peaceful environment for yoga sessions, meditation, and pranayama practices,
+                        complementing the physical treatments with mental and spiritual wellness.
+                    </p>
+                    <div class="space-y-2 text-sm" style="color: var(--ink-soft);">
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Serene meditation environment</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Experienced yoga instructors</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Daily practice sessions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultation Rooms -->
+                <div class="scale-in docket p-8" style="animation-delay: 0.4s;">
+                    <p class="kicker mb-5">Facility</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Consultation Rooms</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Private consultation spaces where patients can discuss their health concerns
+                        in detail with our experienced Ayurvedic practitioners.
+                    </p>
+                    <div class="space-y-2 text-sm" style="color: var(--ink-soft);">
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>3 Private consultation rooms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Digital health records</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Privacy & comfort</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient Accommodation -->
+                <div class="scale-in docket p-8 sm:col-span-2 lg:col-span-1" style="animation-delay: 0.5s;">
+                    <p class="kicker mb-5">Facility</p>
+                    <div class="icon-tile w-14 h-14 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Patient Accommodation</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--ink-soft);">
+                        Comfortable staying facilities for patients undergoing extended treatments,
+                        with all modern amenities and a homely atmosphere.
+                    </p>
+                    <div class="space-y-2 text-sm" style="color: var(--ink-soft);">
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>12 Comfortable rooms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Homely atmosphere</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="tick-dot mr-2"></span>
+                            <span>Nutritious Ayurvedic meals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="py-16 sm:py-24 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <p class="eyebrow mb-4">Recognition</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Awards & <span style="color: var(--patina);">Recognition</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Our commitment to authentic Ayurvedic healing has been recognized by various
+                    organizations and institutions in the field of traditional medicine.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="scale-in docket text-center p-8">
+                    <p class="kicker mb-5">Recognition</p>
+                    <div class="icon-tile w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2" style="color: var(--ink);">Best Ayurvedic Center</h3>
+                    <p class="mb-4 font-semibold" style="color: var(--patina);">Kerala State Ayurveda Excellence Award 2019</p>
+                    <p class="text-sm" style="color: var(--ink-soft);">Recognized for outstanding contribution to traditional medicine</p>
+                </div>
+
+                <div class="scale-in docket text-center p-8" style="animation-delay: 0.1s;">
+                    <p class="kicker mb-5">Recognition</p>
+                    <div class="icon-tile w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2" style="color: var(--ink);">Training Center</h3>
+                    <p class="mb-4 font-semibold" style="color: var(--patina);">Government Approved Training Institute</p>
+                    <p class="text-sm" style="color: var(--ink-soft);">Authorized to train Ayurvedic students and practitioners</p>
+                </div>
+
+                <div class="scale-in docket text-center p-8" style="animation-delay: 0.2s;">
+                    <p class="kicker mb-5">Recognition</p>
+                    <div class="icon-tile w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2" style="color: var(--ink);">Patient Care Excellence</h3>
+                    <p class="mb-4 font-semibold" style="color: var(--patina);">Healthcare Quality Award 2021</p>
+                    <p class="text-sm" style="color: var(--ink-soft);">Recognized for exceptional patient care and satisfaction</p>
+                </div>
+
+                <div class="scale-in docket text-center p-8" style="animation-delay: 0.3s;">
+                    <p class="kicker mb-5">Recognition</p>
+                    <div class="icon-tile w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2" style="color: var(--ink);">Research Contribution</h3>
+                    <p class="mb-4 font-semibold" style="color: var(--patina);">Ayurveda Research Foundation Award</p>
+                    <p class="text-sm" style="color: var(--ink-soft);">Contributions to traditional medicine research and documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy & Values -->
+    <section class="py-16 sm:py-24 md:py-28" style="background: var(--kasavu-deep);">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <p class="eyebrow mb-4">Our Philosophy</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style="color: var(--ink);">
+                    Our <span style="color: var(--patina);">Philosophy</span>
+                </h2>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: var(--ink-soft);">
+                    Rooted in ancient wisdom, our approach to healing encompasses the physical,
+                    mental, and spiritual aspects of wellness.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="scale-in docket p-8 text-center">
+                    <div class="icon-tile w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Holistic Healing</h3>
+                    <p class="leading-relaxed" style="color: var(--ink-soft);">
+                        We believe in treating the whole person - body, mind, and spirit - rather than just symptoms.
+                        Our treatments address the root cause of ailments while promoting overall wellness.
+                    </p>
+                </div>
+
+                <div class="scale-in docket p-8 text-center" style="animation-delay: 0.1s;">
+                    <div class="icon-tile w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Authentic Tradition</h3>
+                    <p class="leading-relaxed" style="color: var(--ink-soft);">
+                        We maintain the purity of traditional Ayurvedic practices while ensuring safety and comfort.
+                        Our treatments follow ancient texts and time-tested methodologies.
+                    </p>
+                </div>
+
+                <div class="scale-in docket p-8 text-center" style="animation-delay: 0.2s;">
+                    <div class="icon-tile w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Personalized Care</h3>
+                    <p class="leading-relaxed" style="color: var(--ink-soft);">
+                        Every patient receives individualized treatment plans based on their unique constitution (Prakriti),
+                        health conditions, and specific needs.
+                    </p>
+                </div>
+
+                <div class="scale-in docket p-8 text-center" style="animation-delay: 0.3s;">
+                    <div class="icon-tile w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Continuous Learning</h3>
+                    <p class="leading-relaxed" style="color: var(--ink-soft);">
+                        We constantly update our knowledge and skills through research, training, and collaboration
+                        with other traditional medicine practitioners worldwide.
+                    </p>
+                </div>
+
+                <div class="scale-in docket p-8 text-center" style="animation-delay: 0.4s;">
+                    <div class="icon-tile w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Community Service</h3>
+                    <p class="leading-relaxed" style="color: var(--ink-soft);">
+                        We believe in giving back to the community through free health camps, awareness programs,
+                        and making traditional medicine accessible to all sections of society.
+                    </p>
+                </div>
+
+                <div class="scale-in docket p-8 text-center sm:col-span-2 lg:col-span-1" style="animation-delay: 0.5s;">
+                    <div class="icon-tile w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4" style="color: var(--ink);">Ethical Practice</h3>
+                    <p class="leading-relaxed" style="color: var(--ink-soft);">
+                        We maintain the highest ethical standards in all our interactions, treatments, and business
+                        practices, ensuring transparency and trust in every aspect of our service.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-24 md:py-28 hero-gradient">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto fade-up">
+                <p class="eyebrow mb-4" style="color: var(--brass-light);">Book Your Visit</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                    Experience Authentic Ayurvedic Healing
+                </h2>
+                <p class="text-lg sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed" style="color: rgba(243, 236, 216, 0.85);">
+                    Join thousands of patients who have found healing and wellness through our
+                    traditional Ayurvedic treatments. Book your consultation today.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="contact.html" class="btn-primary px-8 py-4 font-semibold text-base sm:text-lg w-full sm:w-auto">
+                        Book Consultation
+                    </a>
+                    <a href="tel:+919447012345" class="btn-outline px-8 py-4 font-semibold text-base sm:text-lg w-full sm:w-auto">
+                        Call: +91 94470 12345
+                    </a>
+                </div>
+
+                <div class="zari-rule on-dark max-w-xs mx-auto mt-12 mb-8"></div>
+
+                <div class="flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-2 justify-center font-mono text-xs sm:text-sm tracking-wide uppercase" style="color: rgba(243, 236, 216, 0.65);">
+                    <p>Location — Karanthur, Kozhikode</p>
+                    <p>Hours — Mon–Sat, 8am–7pm</p>
+                    <p>Email — info@vpgayurveda.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-14 sm:py-16" style="background: var(--patina-deep);">
+        <div class="container mx-auto px-6">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+                <div class="sm:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="seal w-12 h-12 flex items-center justify-center">
+                            <span class="font-mono font-bold text-base">VPG</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-xl font-bold">V P G Ayurveda Hospital</h3>
+                            <p class="text-white/60">Karanthur, Kozhikode</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 mb-6 leading-relaxed max-w-md">
+                        Traditional Kerala Ayurvedic hospital specializing in Kalari Marma therapy,
+                        Panchakarma treatments, and holistic healing for over 25 years.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#9A3324] transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#9A3324] transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#9A3324] transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/60 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="treatments.html" class="text-white/60 hover:text-white transition-colors">Treatments</a></li>
+                        <li><a href="about.html" class="text-white/60 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-white/60 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-white/60">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Karanthur, Kozhikode, Kerala 673571</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+91 94470 12345</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@vpgayurveda.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-10 pt-8 text-center text-white/50 text-sm">
+                <p>&copy; 2024 V P G Ayurveda Hospital & Kalari Marma Chikithsalayam. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
